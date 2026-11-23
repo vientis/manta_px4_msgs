@@ -1,4 +1,4 @@
-uint32 MESSAGE_VERSION = 0
+uint32 MESSAGE_VERSION = 1
 
 uint64 timestamp	# time since system start (microseconds)
 
@@ -19,3 +19,5 @@ bool rotational_movement
 bool close_to_ground_or_skipped_check
 
 bool at_rest
+
+bool takeoff_thrust_reached # true once the thrust setpoint has reached LNDMC_TKO_THR x hover thrust since the vehicle was last landed. Rate controllers hold their integrators until then. Always true when LNDMC_TKO_THR is 0 and for non-multicopter land detectors.
